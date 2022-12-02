@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+  --color-background-color: rgb(57,116,117);
+  --color-text-color:#FFFFFF;
+  --color-text2-color:#BBB3E5;
+  font-size: 62.5%;
+  --fs-body:1.6rem;
+  --fs-heading: clamp(4.4rem, 1rem + 5vw, 5,6rem);
+  --fs-heading-small: clamp(3rem, 0.5rem + 3vw, 5,6rem);
+}
+body{
+    font-family: 'Epilogue', sans-serif;
+    background-color: var(--color-background-color);
+    background: linear-gradient(0deg, rgba(57,116,117,1) 0%, rgba(131,42,112,1) 100%);
+   
+   
+    
+}
+header{
+    text-align: center;
+    margin: 10rem 0 8rem;
+}
+header p{
+    color: var(--color-text2-color);
+    transform: uppercase;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1.7rem;
+    font-size: var(--fs-body);
+    line-height: 3.2rem;
+}
+header h1{
+    font-size:var(--fs-heading) ;
+    line-height: 4.8rem;
+    color: var(--color-text-color);
+
+}
+.card{
+    position: relative;
+    border-radius: 1.3rem;
+}
+.card img {
+    height: 41.6rem;
+    object-fit: cover;
+    border-radius: 1.3rem;
+    filter: blur(5px);
+    filter: grayscale(100);
+
+}
+.page{
+    max-width: 33rem;
+    margin: 0 auto;
+    animation-name:  cascata;
+    animation-duration: 500ms;
+}
+@media (min-width: 1000px){ 
+   :root{
+    --fs-heading:5.6rem
+   }
+.page{
+    max-width: 117rem;
+    padding: 0 10rem;
+} 
+main{
+    grid-template-areas: "A B B" "C C D";
+    
+}
+main div:nth-child(1){
+    grid-area: A;
+}
+main div:nth-child(2){
+    grid-area: B;
+}
+main div:nth-child(3){
+    grid-area: C;
+}
+main div:nth-child(4){
+    grid-area: D;
+}
+
+}
+main{
+    display: grid;
+    gap: 3.2rem;
+}
+img{
+    width: 100%;
+    height: auto;
+    transition-property: transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+    opacity: 1;
+}
+img:hover{
+    scale: 1.1;
+    opacity: 0.5;
+    filter: none;
+    
+}
+.card h2{
+    position: absolute;
+    bottom: 5.2rem;
+    left: 2.8rem;
+    font-size: var(--fs-heading-small);
+    font-weight: 800;
+    color: var(--color-text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+}
+.card h2 span{
+    border-radius: 1.9rem;
+    background-color: var(--color-text-color);
+    font-size: var(--fs-body);
+    color:#090039 ;
+    font-weight: 400;
+    padding: 0 1.6rem;
+    height: 3.8rem;
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+
+}
+@keyframes cascata{
+0%{
+    opacity: 0;
+    transform: translateY(-1.5rem);
+}
+100%{
+    opacity: 1;
+    transform: translateY(0);
+}
+}
